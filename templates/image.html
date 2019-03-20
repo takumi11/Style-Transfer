@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    {% if images %}
+        {% for path in images %}
+        <div>
+            <img src="temp/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 200px;">
+            {{ path }}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

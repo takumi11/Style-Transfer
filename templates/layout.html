@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Style Transfer</title>
+
+<!--
+    <script src="{{ url_for('static',filename='js/pace.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/pace.css') }}" >
+-->
+
+    <script type="text/javascript">// <![CDATA[
+        function preloader(){
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+// ]]></script>
+
+    </script>
+
+<!--
+    <style>
+    div#content {
+        display: none;
+    }
+
+    div#loading {
+        top: 200 px;
+        margin: auto;
+        position: absolute;
+        z-index: 1000;
+        width: 160px;
+        height: 24px;
+        background: url(static/loading.gif) no-repeat;
+        cursor: wait;
+    }
+    </style>
+-->
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/sample.css') }}">
+
+  </head>
+
+  <body>
+      <center>
+          <h1>
+              <div class='headline'>
+                  <a href="/" class="headlinename">
+                      <strong>Style Transfer</strong>
+                  </a>
+              </div>
+          </h1>
+      </center>
+    <center>
+
+          {% block content %}{% endblock %}
+
+    </center>
+    <center>
+        <div class='footer'>
+            <small>Copyright (c) Style Transfer.</small>
+        </dev>
+    </center>
+  </body>
+</html>

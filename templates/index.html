@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>
+    <strong>Transfer</strong>
+</h2>
+
+<div id="loading"></div>
+<div id="content">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/png, image/jpeg">
+        <select name="ways">
+            <option value="0" selected>----</option>
+            <option value="1">鉛筆画っぽく</option>
+            <option value="2">水墨画っぽく</option>
+            <option value="3">アニメ画っぽく</option>
+            <option value="4">漫画っぽく</option>
+        </select>
+        <button type="submit">push</button>
+    </form>
+</div>
+
+<div>
+    <a href=/archive class='archive'>
+        <strong>archive</strong>
+    </a>
+</div>
+
+{% if temp %}
+    <!--
+    <table border="0" cellpadding="50">
+    <tr>
+    -->
+    {% for path in temp %}
+        <div　style="white-space: nowrap;">
+            <td>
+                <img src="images/temp/{{ path }}" style="margin-top: 30px; vertical-align: bottom; width: 400px;" hspace="20" vspace="20">
+            </td>
+        </div>
+    {% endfor %}
+    <!--
+    </tr>
+    </table>
+    -->
+{% endif %}
+{% endblock %}

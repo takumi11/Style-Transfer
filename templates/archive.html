@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>
+        <strong>archive</strong>
+    </h2>
+
+    {% if images %}
+        {% for path in images %}
+        <div>
+            <a href=/images/origins/{{path}} class='org'>
+                <img src="images/origins/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 250px;" hspace="20" vspace="20">
+            </a>
+            <a href=/images/treated/{{path}} class='treated'>
+                <img src="images/treated/{{ path }}" style="margin-top: 10px; vertical-align: bottom; width: 250px;" hspace="20" vspace="20">
+            </a>
+        </div>
+        {{ path }}
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
